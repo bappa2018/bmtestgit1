@@ -1,1 +1,35 @@
-echo "biswajit new pipe1"
+pipeline {
+    agent any
+        stages{
+            stage ('checking'){
+                steps {
+					echo "This is a sample pipe project"
+                }
+            }
+            stage ('user input'){
+                steps {
+					input('Do you want to preseed?')
+                }
+            }
+            stage ('testing'){
+                steps {
+					echo 'This is testing project'
+                }
+            }
+			stage ('Two sub test under testing'){
+				parallel {
+					stage ('Unit test'){
+						steps {
+							echo "this is unit testing output"
+						}
+					}
+					stage ('Integration testing'){
+						steps {
+							echo "This isintegration testing"
+						}
+					}
+				}
+			}
+        
+        }
+}
