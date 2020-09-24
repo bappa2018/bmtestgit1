@@ -1,12 +1,15 @@
-node {
+pipeline {
+    agent any 
     stage ('checking'){
+        steps {
         git 'https://github.com/bappa2018/bmtestgit1.git'
         }
-    stage('MVN checking") {
+    }
+    stage ('mvn checking') {
+        steps{
          sh 'mvn package'
         }       
-            
-            
-       }
+    }      
+}
        
             
