@@ -26,6 +26,7 @@ pipeline {
 					stage ('Integration testing'){
 						steps {
 							echo "This isintegration testing"
+							sh 'mvn clean package'
 						}
 					}
 				}
