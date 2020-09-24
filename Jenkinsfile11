@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+        stages{
+            stage ('checking'){
+                steps {
+					        git 'https://github.com/bappa2018/bmtestgit1.git'
+                }
+            }
+            stagec('MVN checking") {
+            steps {
+                sh 'mvn package'
+                }
+            }
+            
+       }
+       
+ }
+            
